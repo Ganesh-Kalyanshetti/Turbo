@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Cars</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        color: aliceblue;
+        background-color: #1e1e2f;
+        font-family: "Poppins", sans-serif;
+        font-weight: 100;
+        scrollbar-width: none;
+        font-style: normal;
+    }
+
+    .imgSize {
+
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        background-size: contain;
+    }
+
+    .cars {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        color: aliceblue;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .a {
+        
+        margin: 20px 50px 50px 0px ;
+        width: 320px;
+        height: 200px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        color: aliceblue;
+        animation: appear 2s ease-out;
+        /* border-radius: 50px; */
+    }
+
+    .a:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* .b {
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+    } */
+
+    .a:hover {
+        transform: scale(1.1);
+    }
+
+    .landing {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        background: url("rolls.webp");
+        /* animation: wallpaper 50s infinite; */
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+
+    }
+    
+    /* @keyframes wallpaper {
+        0% {
+            background-image: url("rolls.webp");
+        }
+
+        /* 30%  { background-image: url("BMW.webp"); } */
+    /* 40%  { background-image: url("Mclearn_Senna.jpg"); } */
+    /* 60%  { background-image: url("Mustang1.jpg"); } */
+    /* 80%  { background-image: url("Mercedes.jpg"); } */
+    /* 100% {
+            background-image: url("rolls.webp");
+        } */
+    /* } */
+
+    .landing img {
+        width: 80%;
+        height: 100%;
+        margin: 0px 0;
+    }
+
+    .landing h1 {
+        padding-right: 100px;
+        background: transparent;
+        padding-top: 60px;
+        font-weight: 400;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+
+    }
+
+    .page {
+        display: none;
+        position: fixed;
+        width: 80%;
+        height: 80%;
+        z-index: 1;
+        left: 10%;
+        top: 5%;
+        background-color: rgba(26, 22, 22, 0.9);
+        padding: 5px;
+    }
+
+    .closebtn {
+        cursor: pointer;
+        background-color: red;
+        position: absolute;
+        border-radius: 5px;
+        font-weight: 300;
+        padding: 5px 10px;
+        right: 5px;
+    }
+
+    .carinfo {
+        font-size: 250%;
+        font-weight: 400;
+        padding: 10px;
+        background: none;
+
+    }
+
+    .classify {
+        background: none;
+
+    }
+
+    .dddd {
+        font-size: 125%;
+        background: none;
+        font-weight: 300;
+        padding: 10px;
+    }
+
+    .kkkk {
+        position: absolute;
+        font-weight: 300;
+        right: 20%;
+        background: none;
+        bottom: 35%;
+        font-size: 140%;
+    }
+
+    .innerphoto {
+        width: 120%;
+        height: 120%;
+        border-radius: 10px;
+        background: none;
+        background-size: contain;
+    }
+
+    .inbox {
+        background: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    .inner {
+        margin: 70px 10px;
+        width: 30%;
+    }
+    .footer {
+    background-color: #0c0c1f;
+    color: aliceblue;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    background-color: #1e1e2f;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-section {
+    margin: 10px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: #64c4d3;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #333;
+}
+</style>
+<body>
+
+    <div class="landing">
+        <h1>Auto Gallery</h1>
+        <p></p>
+    </div>
+    <div class="cars"></div>
+    <div id="screen" class="page">
+        <button class="closebtn" id="closes">X</button>
+
+        <h5 id="description" class="carinfo"></h5>
+
+        <p id="models_info" class="dddd"></p>
+        <div id="sizing" class="classify">
+            <div id="inbox_img" class="inbox"></div>
+
+            <p id="infos" class="kkkk"></p>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Auto Gallery</h3>
+                <p>Explore the world of luxury and performance cars.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: Youremail@gmail.com</p>
+                <p>Phone: +91 (12-3456-7891)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Auto Gallery</p>
+        </div>
+    </footer>
+</body>
+<script>
+    let imag = document.querySelector(".cars");
+
+    const allcar = ['Koenigsegg.jpg', 'Mclearn_Senna.jpg', 'Mercedes.jpg', 'Mustang1.jpg', 'Porsche911.jpg', 'bugatti.jpg', 'bmwe34.jpg','rolls-royce-boat-tail.jpg','Pagani-Zonda.jpg','Dodge.jpg']
+
+    // let  names = ['Koenigsegg','Mclearn Senna','Mercedes','Mustang','Porsche911','bugatti']
+    let desp = ['Koenigsegg Jesko Absolut', 'Mclearn Senna', 'Mercedes-Bez S-Class (W222)', 'Ford Mustang', 'Porsche 911 GT3 RS', 'Bugatti Mistral', 'BMW M5 E34','Rolls Royce','Pagani','Dodge Challenger SRT Hellcat Widebody']
+    allcar.forEach((element, i) => {
+
+        imag.innerHTML +=
+            `
+        <div class="a" >
+                    <img class="imgSize"  id="cc" src="${allcar[i]}" alt="" />       
+        </div>`
+
+    });
+
+    document.querySelectorAll(".imgSize").forEach((img, i) => {
+
+        img.addEventListener("click", function () {
+
+            var page = document.getElementById("screen");
+            page.style.display = "block";
+
+            var des = document.getElementById("description");
+            var infoelement = document.getElementById("infos");
+            var modelsInfoElement = document.getElementById("models_info");
+
+
+
+            var inbox_images = document.getElementById("inbox_img")
+            // allcar.forEach( src =>{
+
+            // let newimg = document.createElement("img");
+            // newimg.src=src;
+            // newimg.classList.add("inbox_images"); 
+            // inbox_images.appendChild(newimg);
+
+            // })
+            inbox_images.innerHTML =
+                `
+        <div class="inner">
+                    <img class="innerphoto"  id="cc" src="${allcar[i]}" alt="" />                  
+        </div>`
+            des.innerText = desp[i];
+            infoelement.innerText = infos[i].join("\n");
+            modelsInfoElement.innerText = models_info[i][0];
+        })
+
+    })
+
+    let infos =
+        [
+            ["Company : Koenigsegg", "Model : Jesko Absolut", "Year : 2024"],
+            ["Company : Mclaren Automotive", "Model : Senna", "Year : 2019"]
+            , ["Company : Mercedes-Benz", "Model : S-Class (W222)", "Year : 2013"]
+            , ["Company : Ford", "Model : Mustang", "Year : 1969"]
+            , ["Company : porsche", "Model : 911 GT3 RS", "Year : 1994"]
+            , ["Company : Bugatti", "Model : w16-mistral", "Year : 2022"]
+            , ["Company : BMW", "Model : E34 M5", "Year : 2000"]
+            , ["Company : Rolls Royce", "Model : Boat-Tail", "Year : 2021"]
+            , ["Company : Pagani", "Model : Zonda", "Year : 1999"]
+            , ["Company : Dodge", "Model : Challenger SRT Hellcat Widebody", "Year : 2023"]
+            
+        ]
+
+    let models_info =
+        [
+
+              ["Koenigsegg Jesko is a high-performance hypercar powered by a 5.0L twin-turbo V8 producing 1,280-1,600 HP."]
+            , ["The McLaren Senna is an ultra-lightweight track-focused hypercar with a 4.0L twin-turbo V8 producing 789 HP and 800 Nm torque, 0-100 km/h time of 2.8 seconds"]
+            , ["The Mercedes-Benz S-Class (W222) is the pinnacle of luxury and innovation, redefining the executive sedan segment Available with powerful V6, V8, and V12 engines"]
+            , ["The 1969 Ford Mustang is an American muscle car legend, blending raw power with iconic fastback styling. With its aggressive grille, bold lines, and roaring Boss 429 and Mach 1 engines"]
+            , ["Its is a track-bred masterpiece, engineered for pure driving exhilaration , With a 4.0L and 518 horsepower, Its aggressive aerodynamics, massive rear wing, and lightweight design make it a true race car for the road"]
+            , ["The Bugatti Mistral is a breathtaking open-top hypercar, marking the final chapter of Bugatti's legendary W16 engine. With 1,578 horsepower, it blends extreme performance with unmatched elegance, reaching speeds over 420 km/h."]
+            , ["The E34 M5 stands with power and thrill , A high-revving straight-six roars within, A timeless icon, where legends begin."]
+            , ["A Masterpiece of luxury, where elegance meets the open sea.Handcrafted perfection, A 6.75-liter V12 engine, smooth as silk, fierce as thunder"]
+            , ["A symphony of carbon fiber and raw power, born from Italian passion.With a Mercedes-AMG V12 heart, it roars like a thunderstorm.Handcrafted perfection, each curve a tribute to speed and art."]
+            , ["The Dodge Challenger SRT Hellcat Widebody is a masterpiece of American muscle, blending raw power with an aggressive stance. Beneath its sculpted hood lies a 6.2L Supercharged V8, unleashing a thunderous 717 horsepower"]
+
+        ]
+
+
+    document.getElementById("closes").addEventListener("click", function () {
+
+        document.getElementById("screen").style.display = "none";
+
+    })
+
+</script>
+
+</html>
